@@ -9,6 +9,7 @@ public:
 	virtual bool CheckThirdClassRoad(double road_length, double hours) const =0;
 	virtual bool CheckSpeedRoad(double road_length, double hours) const =0;
 	virtual bool CheckHighway(double road_length, double hours) const =0;
+	virtual Vehicle* Clone() = 0;
 	const char* GetModel() const
 	{
 		return this->model;
@@ -37,6 +38,7 @@ public:
 	virtual bool CheckThirdClassRoad(double road_length, double hours) const override;
 	virtual bool CheckSpeedRoad(double road_length, double hours) const override;
 	virtual bool CheckHighway(double road_length, double hours) const override;
+	Vehicle* Clone() override;
 };
 
 
@@ -46,6 +48,7 @@ public:
 	virtual bool CheckThirdClassRoad(double road_length, double hours) const override;
 	virtual bool CheckSpeedRoad(double road_length, double hours) const override;
 	virtual bool CheckHighway(double road_length, double hours) const override;
+	Vehicle* Clone() override;
 };
 
 
@@ -55,6 +58,7 @@ public:
 	virtual bool CheckThirdClassRoad(double road_length, double hours) const override;
 	virtual bool CheckSpeedRoad(double road_length, double hours) const override;
 	virtual bool CheckHighway(double road_length, double hours) const override;
+	Vehicle* Clone() override;
 };
 
 

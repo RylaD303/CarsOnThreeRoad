@@ -13,8 +13,10 @@ bool Car::CheckHighway(double road_length, double hours) const
 {
 	return hours >= road_length / this->max_speed;
 }
-
-
+Vehicle* Car::Clone()
+{
+	return new Car(*this);
+}
 bool Lorry::CheckThirdClassRoad(double road_length, double hours) const
 {
 	return hours >= road_length / 10;
@@ -27,7 +29,10 @@ bool Lorry::CheckHighway(double road_length, double hours) const
 {
 	return hours >= (road_length / this->max_speed)*2;
 }
-
+Vehicle* Lorry::Clone()
+{
+	return new Lorry(*this);
+}
 
 bool Minibus::CheckThirdClassRoad(double road_length, double hours) const
 {
@@ -40,4 +45,8 @@ bool Minibus::CheckSpeedRoad(double road_length, double hours) const
 bool Minibus::CheckHighway(double road_length, double hours) const
 {
 	return hours >= road_length / this->max_speed;
+}
+Vehicle* Minibus::Clone()
+{
+	return new Minibus(*this);
 }

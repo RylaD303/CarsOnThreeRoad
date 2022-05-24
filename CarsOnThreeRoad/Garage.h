@@ -39,17 +39,22 @@ public:
 	}
 	~Garage()
 	{
-		delete[] this->vehicles;
+		for (int i = 0; i < size; i++)
+		{
+			delete[] vehicles[i];
+		}
+		delete[] vehicles;
 	}
 	void Add(Vehicle* vehicle)
 	{
+
 		if(this->size == capacity - 1)
 		{ 
 			std::cout << "Maximum capacity reached. GFDEFGBNMJHYTGHNJ" << std::endl;
 		}
 		else
 		{
-			this->vehicles[size] = vehicle;
+			this->vehicles[size] = vehicle -> Clone();
 			size++;
 		}
 	}
